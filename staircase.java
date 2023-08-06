@@ -20,6 +20,21 @@ class Result {
 
     public static void staircase(int n) {
     // Write your code here
+        int spaces = n-1;
+        int hashtags = 1;
+        for (int i = 0; i < n; i++){
+            for(int j = 0; j < spaces; j++){
+                System.out.print(" ");
+                
+            }
+            for(int j = 0; j < hashtags; j++){
+                System.out.print("#");
+                
+            }
+            System.out.println();
+            spaces--;
+            hashtags ++;
+        }
 
     }
 
