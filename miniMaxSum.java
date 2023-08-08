@@ -19,16 +19,23 @@ class Result {
      */
 
     public static void miniMaxSum(List<Integer> arr) {
-    // Write your code here
-        int minSum = 0;
-        int maxSum = 0;
+        long minSum = 0;
+        long maxSum = 0;
+        int minCounter = 0;
+        int maxCounter = 0;
         Collections.sort(arr);
-        for (int i = 0; i < arr.size(); i++){
-            if (i > 0){
-                maxSum = maxSum + arr.get(i);
+        for (int i = 0; i < arr.size(); i++) {
+            if (maxCounter < 4) {
+                if (i > 0) {
+                    maxSum = maxSum + arr.get(i);
+                    maxCounter++;
+                }
             }
-            if (i < arr.size() - 1){
-                minSum = minSum + arr.get(i);
+            if (minCounter < 4) {
+                if (i < arr.size() - 1) {
+                    minSum = minSum + arr.get(i);
+                    minCounter++;
+                }
             }
         }
         System.out.println(minSum + " " + maxSum);
