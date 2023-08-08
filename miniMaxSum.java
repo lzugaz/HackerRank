@@ -20,7 +20,18 @@ class Result {
 
     public static void miniMaxSum(List<Integer> arr) {
     // Write your code here
-
+        int minSum = 0;
+        int maxSum = 0;
+        Collections.sort(arr);
+        for (int i = 0; i < arr.size(); i++){
+            if (i > 0){
+                maxSum = maxSum + arr.get(i);
+            }
+            if (i < arr.size() - 1){
+                minSum = minSum + arr.get(i);
+            }
+        }
+        System.out.println(minSum + " " + maxSum);
     }
 
 }
